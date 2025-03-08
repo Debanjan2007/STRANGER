@@ -75,6 +75,7 @@ imgInput.addEventListener("change", (e) => {
     let imgsrc = URL.createObjectURL(e.target.files[0]);
     replaceSVGWithImg(imgsrc);
     img.src = imgsrc;
+    console.log(imgsrc);
     img.style.borderRadius = "50%";
     img.style.objectFit = "contain";
   }
