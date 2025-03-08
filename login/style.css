@@ -67,51 +67,6 @@
     visibility: hidden;
     opacity: 0;
   }
-  /* .loader{
-    height: 100vh;
-    width: 100vw;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .circle_load{
-    min-height: 6rem;
-    min-width: 6rem;
-    border: 0.3rem solid #e3aeaedd;
-    border-radius: 50%;
-    border-top: 0.3rem solid #fe1d6ce4;
-    animation: spin_load 1s linear infinite;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .circle_load2{
-    min-height: 4rem;
-    min-width: 4rem;
-    border: 0.14rem solid #e3aeaedd;
-    border-radius: 50%;
-    border-top: 0.14rem solid #fe1d6ce4;
-    animation: spin_load_rev 2s linear infinite;
-    display: flex;
-  }
-  @keyframes spin_load_rev {
-    0%{
-      transform: rotate(-0deg);
-    }
-    100%{
-      transform: rotate(-360deg);
-    }
-  }
-  @keyframes spin_load {
-    0%{
-      transform: rotate(0deg);
-    }
-    100%{
-      transform: rotate(360deg);
-    }
-  } */
-  
   .animate{
     animation: MoveDownScale 0.5s ease forwards; /* Animation with scaling */
   }
