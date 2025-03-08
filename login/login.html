@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log-in</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&family=Russo+One&family=Syncopate&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- <div class="loader">
+      <div class="circle_load">
+        <div class="circle_load2"></div>
+      </div> -->
+    </div>
+    <div class="conntainer">
+      <div class="main">
+        <div class="user-pic">
+          <button id="capture">
+            <svg
+              width="100"
+              height="100"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 100 100"
+            >
+              <!-- Background Circle -->
+              <circle cx="50" cy="50" r="50" fill="white" />
+
+              <!-- Head -->
+              <circle cx="50" cy="35" r="15" fill="#fe1d6ce4" />
+
+              <!-- Shoulders (Extended) -->
+              <path d="M30 70 Q50 50 70 70" fill="#fe1d6ce4" />
+            </svg>
+          </button>
+        </div>
+        <div class="username">
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control username"
+              id="floatingInput"
+              placeholder="username"
+            />
+            <label for="floatingInput">Username</label>
+          </div>
+        </div>
+        <div class="email">
+          <div class="form-floating mb-3">
+            <input
+              type="email"
+              class="form-control email"
+              id="floatingInput"
+              placeholder="name@example.com"
+            />
+            <label for="floatingInput">Email address</label>
+          </div>
+        </div>
+        <div class="password">
+          <div class="form-floating">
+            <input
+              type="password"
+              class="form-control pass"
+              id="floatingPassword"
+              placeholder="Password"
+            />
+            <label for="floatingPassword">Password</label>
+          </div>
+        </div>
+        <div class="creatAcc">
+          <button class="btn" style="color: #dd2666f6">Creat account</button>
+
+        </div>
+      </div>
+    </div>
+    <!-- pop ups -->
+    <!-- whenever the button clickes then this pop up will shown -->
+    <div class="pic-popup inactive">
+      <div class="image">
+        <img src="" id="img" alt="" />
+      </div>
+      <div class="addImg">
+        <label id="upload" for="image"
+          ><i class="fa-solid fa-upload"></i>Upload image</label
+        >
+        <input
+          type="file"
+          class="img-file"
+          id="image"
+          name="image"
+          accept="image/*"
+        />
+      </div>
+      <!-- cross use to cut the pop up box -->
+      <div class="cross">
+        <i class="fas fa-times"></i>
+      </div>
+    </div>
+    <!-- proofile pic preview -->
+    <div class="preview">
+      <img src="squid-background.jpg" id="preImg" />
+    </div>
+    <!-- cross for preview -->
+    <div class="crossForPre">
+      <i class="fas fa-times"></i>
+    </div>
+    <!-- alert -->
+    <div class="alert_box">
+      <strong>Holy Jessus!</strong> Input fields are not filled!
+      <button type="button" id="alert_cross">X</button>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

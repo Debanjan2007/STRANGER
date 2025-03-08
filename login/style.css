@@ -1,0 +1,328 @@
+* {
+    padding: 0;
+    margin: 0;
+    color: #fe1d6ce4;
+    font-family: "Audiowide", sans-serif;
+    text-align: justify;
+  }
+  body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .conntainer {
+    /* position: absolute; */
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("squid-background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .main {
+    height: auto;
+    width: 30%;
+    padding: 0.8rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
+    border: 1px solid white;
+    border-radius: 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  #capture {
+    display: block;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Makes the button round */
+    overflow: hidden;
+  }
+  
+  #capture svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* alert for button */
+  .alert_box {
+    position: fixed;
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%, -150%) scale(0.5); /* Start slightly above */
+    height: auto;
+    width: auto;
+    background-color: #e9cf83c9;
+    padding: 1rem 2rem;
+    visibility: hidden;
+    opacity: 0;
+  }
+  /* .loader{
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .circle_load{
+    min-height: 6rem;
+    min-width: 6rem;
+    border: 0.3rem solid #e3aeaedd;
+    border-radius: 50%;
+    border-top: 0.3rem solid #fe1d6ce4;
+    animation: spin_load 1s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .circle_load2{
+    min-height: 4rem;
+    min-width: 4rem;
+    border: 0.14rem solid #e3aeaedd;
+    border-radius: 50%;
+    border-top: 0.14rem solid #fe1d6ce4;
+    animation: spin_load_rev 2s linear infinite;
+    display: flex;
+  }
+  @keyframes spin_load_rev {
+    0%{
+      transform: rotate(-0deg);
+    }
+    100%{
+      transform: rotate(-360deg);
+    }
+  }
+  @keyframes spin_load {
+    0%{
+      transform: rotate(0deg);
+    }
+    100%{
+      transform: rotate(360deg);
+    }
+  } */
+  
+  .animate{
+    animation: MoveDownScale 0.5s ease forwards; /* Animation with scaling */
+  }
+  @keyframes MoveDownScale {
+    0% {
+      transform: translate(-50%, -150%) scale(0.5); /* Start slightly above */
+      opacity: 0; /* Optional: Fade in */
+    }
+    100% {
+      transform: translate(-50%, -10%) scale(1); /* Adjusted to end slightly higher */
+      opacity: 1; /* Optional: Full opacity */
+    }
+  }
+  .animate-hide {
+    animation: MoveUpScale 0.5s ease forwards; /* Reverse animation to hide */
+  }
+  @keyframes MoveUpScale {
+    0% {
+      transform: translate(-50%, -10%) scale(1); /* Start from the visible position */
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, -150%) scale(0.5); /* Move back up and shrink */
+      opacity: 0;
+    }
+  }
+  
+  .alert_box button{
+    margin-left: 1rem;
+    padding: 0.21rem;
+    font-size: 1.32rem;
+    border: none;
+    background: transparent;
+  }
+  @media (max-width: 950px) {
+    .main {
+      width: 65%;
+      height: auto;
+      gap: 1rem;
+      background-color: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(8px);
+      border: 1px solid white;
+    }
+    .conntainer {
+      background-image: url("squidgame-back-for-mobile2.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .user-pic {
+      height: 80px;
+      width: 80px;
+      border-radius: 50%;
+    }
+    #capture {
+      width: 80px;
+      height: 80px;
+    }
+    .pic-popup {
+      padding: 1rem;
+      height: 60%;
+      min-width: 85%;
+      gap: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-basis: 50%;
+    }
+    .addImg {
+      flex-basis: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .preview{
+      min-height: 30%;
+      min-width: 30%;
+      background-size: contain;
+      
+    }
+  }
+  
+  .pic-popup {
+    padding: 1.32rem;
+    min-height: 45%;
+    min-width: 50%;
+    gap: 2rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
+    border-radius: 1rem;
+    position: fixed;
+    visibility: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .blur {
+    filter: blur(20px);
+    z-index: 0;
+    transition: ease-in-out 0.5s;
+  }
+  .inactive {
+    z-index: 1;
+    opacity: 0;
+    transition: ease-in-out 0.5s;
+  }
+  .active {
+    visibility: visible;
+    top: 50%;
+    z-index: 99;
+    opacity: 1;
+    transition: ease-in-out 0.5s;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .image {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .cross {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+  .addImg {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #capture img {
+    width: 100%; /* Make the img inside the button fill the entire button */
+    height: 100%;
+    border-radius: 50%; /* Round image */
+    object-fit: cover; /* Ensure the image does not distort */
+  }
+  
+  .pic-popup img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%; /* Round image in the popup */
+    border: 1px dashed #fe1d6ce4; /* Style for the image in the popup */
+    cursor: pointer;
+  }
+  input[type="file"]{
+    display: none;
+  }
+  .addImg #upload{
+    display: inline-block;
+    cursor: pointer;
+  }
+  .addImg #upload:active{
+    transform: scale(1.32rem);
+  }
+  .addImg i{
+    color: #fe1d6ce4;
+    margin-right: 0.5rem;
+  }
+  .preview {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 45%;
+    min-width: 25%;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 99;
+    transition: ease-in-out 0.5s;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  #preImg {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .crossForPre {
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    font-size: 1.87rem;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 99;
+    cursor: pointer;
+  }
+  .creatAcc{
+    color: #fe1d6ce4;
+    min-width: 9.5rem;
+    cursor: pointer;
+  }
+  .alert{
+    position: fixed;
+    top: 0rem;
+  }
+  
+  .freeze{
+    overflow: hidden;
+    pointer-events: none; /* Disable all pointer events in the background */
+  }
+  
