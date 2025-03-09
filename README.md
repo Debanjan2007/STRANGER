@@ -1,2 +1,2 @@
 # STRANGER
-##A chatting app 
+## A chatting app 
