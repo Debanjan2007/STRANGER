@@ -1,10 +1,9 @@
 // imports
 import express from "express";
-import { handleNewUserData } from "./controller/index"; ;
+import { handleNewUserData } from "./controller/index.js";
 
-const router = express.Router() ;
+const router = express.Router();
 
+router.post('/', handleNewUserData);
 
-router.post('/' , handleNewUserData ) ;
-
-module.exports = router ; 
+module.exports = router;

@@ -3,10 +3,9 @@ import { userData } from '../models/index';
 import shortid from 'shortid';
 
 // handle user data when creating a new user 
-const handleNewUserData = async (req , res) => {
+export const handleNewUserData = async (req , res) => {
     const body = req.body ; //taking the body from the request
     const user_ID = shortid.generate(); //generating a unique user ID
-    body.user_ID = user_ID ; //adding the user ID to the body
     if(!body) {
         return res.status(400).json({
             success : false ,
@@ -25,4 +24,4 @@ const handleNewUserData = async (req , res) => {
         }
     );
 }
-module.exports = { handleNewUserData } ; 
+// module.exports = { handleNewUserData } ; 
