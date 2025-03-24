@@ -46,10 +46,10 @@ const handleNewUserData = async (req , res) => {
     );
     }catch (err) {
         if(err.code === 11000){
-            return res.send(`
-                <h1> Duplicate key error </h1>
-                <p> User with this email already exists </p>
-                `)
+            return res.status(400).json({
+                success : false ,
+                msg : "user or email already exists" ,
+            })
         }
         console.error("Error occurred while creating user:", err);
         return res.status(500).json({
