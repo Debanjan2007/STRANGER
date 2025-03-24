@@ -1,8 +1,9 @@
 // imports
-import express from "express";
-import mongoose from "mongoose";
-import router from "./routes/index";
+const express = require("express");
+const mongoose = require("mongoose");
+const router = require("./routes/index");
 
+// Configering app and port
 const app = express();
 const port = 8000;
 
