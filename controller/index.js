@@ -27,7 +27,8 @@ const handleNewUserData = async (req , res) => {
         }
     );
     }catch (err) {
-        if(err.code === 11000){
+        // err code 11000 thrown by mongo for same gmail 
+        if(err.code === 11000){ //this ensures that the user can't use same gmail for multiple accounts 
             return res.status(400).json({
                 success : false ,
                 msg : "user or email already exists" ,
