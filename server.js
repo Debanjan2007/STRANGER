@@ -2,12 +2,14 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const router = require("./routes/index");
+const bodyParser = require('body-parser');
 
 // Configering app and port
 const app = express();
 const port = 8000;
 
 // mmiddlewares 
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json()) ;
 app.use("/" , router)
 

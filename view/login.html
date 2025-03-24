@@ -49,13 +49,14 @@
         </div>
 
         <!-- Form section with reCAPTCHA -->
-        <form id="user-form" action="/your-endpoint" method="POST">
+        <form id="user-form" action="http://localhost:8000/" method="POST">
           <div class="username">
             <div class="form-floating mb-3">
               <input
                 type="text"
                 class="form-control username"
                 id="floatingInput"
+                name="user_name"
                 placeholder="username"
                 required
               />
@@ -68,6 +69,7 @@
                 type="email"
                 class="form-control email"
                 id="floatingInput"
+                name="user_email"
                 placeholder="name@example.com"
                 required
               />
@@ -80,6 +82,7 @@
                 type="password"
                 class="form-control pass"
                 id="floatingPassword"
+                name="user_img"
                 placeholder="Password"
                 required
               />
