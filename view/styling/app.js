@@ -17,6 +17,7 @@ let alert_cros = document.querySelector("#alert_cross");
 let email2, password2, user_name2;
 let loader = document.querySelector(".loader");
 
+
 // load animation 
 // window.addEventListener("load", () => {
 //   loader.style.display = "none";
