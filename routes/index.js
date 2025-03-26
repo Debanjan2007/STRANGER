@@ -6,7 +6,7 @@ const path = require('path');
 const router = express.Router();
 
 router.post('/', handleNewUserData);
-router.get('/login', (req , res) => {
+router.get('/', (req , res) => {
     res.json({status : "pending"}) ;
 })
 

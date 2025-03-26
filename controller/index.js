@@ -4,7 +4,7 @@ const shortid = require("shortid") ;
 const axios = require('axios');
 
 // recaptcha code 
-const RECAPTCHA_SECRET_KEY = '6LdF4cQaAAAAAFZgP6H4L8V2sLQ0k9QoRJX7t3Qe';
+const RECAPTCHA_SECRET_KEY = '6Lf9xAArAAAAAJGyW3tCLqf0rm7Bi4QCz3VcB3MF';
 
 // handle user data when creating a new user 
 const handleNewUserData = async (req , res) => {
@@ -16,9 +16,9 @@ const handleNewUserData = async (req , res) => {
         const verificationUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${RECAPTCHA_SECRET_KEY}&response=${recaptchaResponse}`;
 
         const recaptchaRes = await axios.post(verificationUrl);
-
+        const success = recaptchaRes.data.success ; 
         // Check if reCAPTCHA verification failed
-        if (!recaptchaRes.data.success) {
+        if (!success) {
             return res.status(400).json({
                 success: false,
                 error: "reCAPTCHA verification failed. Please try again.",
@@ -46,10 +46,12 @@ const handleNewUserData = async (req , res) => {
     );
     }catch (err) {
         if(err.code === 11000){
-            return res.status(400).json({
-                success : false ,
-                msg : "user or email already exists" ,
-            })
+            return res.status(400).send(
+                `
+                <h1> Duplicate Key Error </h1>
+                <p> The user already exists </p>
+                `
+            )
         }
         console.error("Error occurred while creating user:", err);
         return res.status(500).json({

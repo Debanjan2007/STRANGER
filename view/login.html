@@ -28,6 +28,7 @@
   <body>
     <div class="conntainer">
       <div class="main">
+        <form id="user-form" action="../controller/index.js" method="POST"></form>
         <div class="user-pic">
           <button id="capture">
             <svg
@@ -47,9 +48,7 @@
             </svg>
           </button>
         </div>
-
         <!-- Form section with reCAPTCHA -->
-        <form id="user-form" action="http://localhost:8000/" method="POST">
           <div class="username">
             <div class="form-floating mb-3">
               <input
@@ -86,22 +85,22 @@
                 placeholder="Password"
                 required
               />
-              <label for="floatingPassword">Password</label>
+              <label for="floatingPassword">Creat Password</label>
             </div>
           </div>
 
           <!-- reCAPTCHA integration -->
+          <form id="user-form" action="http://localhost:8000/" method="POST">
           <div class="recaptcha-container mb-3">
-            <div
-              class="g-recaptcha"
-              data-sitekey="YOUR_SITE_KEY"
-            ></div>
+              <!-- Other form fields -->
+              <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
           </div>
-
+          </form>
           <div class="creatAcc">
             <button class="btn" type="submit" style="color: #dd2666f6">
               Create account
             </button>
+            </div>
           </div>
         </form>
       </div>

@@ -11,7 +11,7 @@ const port = 8000;
 // mmiddlewares 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json()) ;
-app.use("/" , router)
+app.use("/login" , router);
 
 // conneting to mongoDB
 mongoose
